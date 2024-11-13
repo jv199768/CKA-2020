@@ -1,3 +1,5 @@
+#mkdir -p /etc/kubernetes/manifests
+cat<<EOF >/etc/kubernetes/manifests/static-nginx.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,3 +15,4 @@ spec:
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
+EOF

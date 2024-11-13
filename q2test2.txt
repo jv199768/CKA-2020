@@ -1,0 +1,2 @@
+#kubectl get deployments -A -o=custom-columns=NAME:.metadata.name,NAMESPACE:.metadata.namespace,IMAGE:..image > /var/tmp/all-deployments.txt
+#kubectl get deployments -A -o=custom-columns=NAME:.metadata.name,NAMESPACE:.metadata.namespace,IMAGE:.spec.template.spec.containers[0].image > /var/tmp/all-deployments.txt

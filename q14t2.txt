@@ -1,0 +1,5 @@
+#kubectl config set-context --current --namespace=alpha
+#kubectl run my-web --image=nginx -n alpha
+#kubectl expose pod my-web --name=my-web-svc --port=8080 -n alpha
+#kubectl run testpod --image=busybox --rm -it -- nslookup my-web-svc.alpha > /tmp/svc-lookup.txt
+#kubectl run testpod --image=busybox --rm -it -- nslookup pod-ip-address.alpha.pod.cluster.local > /tmp/pod-lookup.txt

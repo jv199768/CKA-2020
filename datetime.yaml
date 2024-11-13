@@ -1,0 +1,22 @@
+#kubectl run datetime --image=busybox --command sleep 1200 --dry-run=client -o yaml > datetime.yaml
+#kubectl apply -f datetime.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	creationTimestamp: null
+	labels:
+	   run: datetime
+	name: datetime
+spec:
+	containers:
+	- command:
+		- sleep
+		- "1200"
+	image: busybox
+	name: datetime
+	securityContext:
+		capabilities:
+		   add: ["SYS_TIME"]
+	resources: {}
+    dnsPolicy: ClusterFirst
+    restartPolicy: Always

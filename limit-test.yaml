@@ -1,0 +1,15 @@
+#kubectl set resources pod limit-test --requests='cpu=1, memory=256Mi'
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: limit-test
+  name: limit-test
+spec:
+  containers:
+    - image: nginx
+      name: limit-test
+      resources:
+        limits:
+          cpu: "1"
+          memory: 256Mi
